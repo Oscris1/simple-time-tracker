@@ -2,7 +2,6 @@ import { NavigationContainer, NavigationState } from '@react-navigation/native'
 import { FC } from 'react'
 
 import { RootNavigator } from './RootNavigator'
-import { linking } from './linking'
 
 import { StatusBar } from '~components'
 import {
@@ -42,7 +41,6 @@ export const Navigation: FC = () => {
         onReady={onReady}
         onStateChange={onStateChange}
         theme={navigationTheme}
-        linking={linking}
         initialState={initialState}
       >
         <RootNavigator />

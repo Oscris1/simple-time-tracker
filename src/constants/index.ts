@@ -1,6 +1,5 @@
 export * from './asyncStorageKeys'
 export * from './colorSchemes'
-export * from './env'
 export * from './environments'
 export * from './NativeBaseConfig'
 export * from './regex'

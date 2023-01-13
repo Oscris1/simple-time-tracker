@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native'
 
 import { AbsoluteFullFill } from './atoms'
 
-import { useAuth, useBoolean, useCachedResources } from '~hooks'
+import { useBoolean, useCachedResources } from '~hooks'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -14,7 +14,6 @@ export const AppLoading: FC<PropsWithChildren> = ({ children }) => {
 
   // Delay loading logic was made to prevent displaying empty screen after splash screen will hide
   const [isDelayLoading, setIsDelayLoading] = useBoolean(true)
-  const { isSignedIn } = useAuth()
 
   useEffect(() => {
     async function prepare() {
@@ -43,7 +42,7 @@ export const AppLoading: FC<PropsWithChildren> = ({ children }) => {
     }
   }, [])
 
-  const isLoading = !isLoadingComplete || isSignedIn === null
+  const isLoading = !isLoadingComplete
 
   useEffect(() => {
     if (!isLoading) {

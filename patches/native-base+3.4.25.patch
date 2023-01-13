@@ -1,0 +1,17 @@
+diff --git a/node_modules/native-base/lib/commonjs/components/primitives/Select/Select.js b/node_modules/native-base/lib/commonjs/components/primitives/Select/Select.js
+index 4241fa2..4a03163 100644
+--- a/node_modules/native-base/lib/commonjs/components/primitives/Select/Select.js
++++ b/node_modules/native-base/lib/commonjs/components/primitives/Select/Select.js
+@@ -77,6 +77,12 @@ const Select = ({
+ 
+   const [isFocused, setIsFocused] = _react.default.useState(false);
+ 
++  _react.default.useEffect(() => {
++    if (isFocusedProp) {
++      setIsOpen(true)
++    }
++  }, [isFocusedProp])
++
+   const {
+     focusProps,
+     isFocusVisible

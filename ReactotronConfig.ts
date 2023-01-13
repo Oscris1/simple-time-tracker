@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { NativeModules } from 'react-native'
 import Reactotron from 'reactotron-react-native'
+import { reactotronRedux } from 'reactotron-redux'
 
 /**
  * Note:
@@ -16,7 +17,7 @@ if (__DEV__) {
   scriptHostname = scriptURL.split('://')[1].split(':')[0]
 }
 
-Reactotron?.setAsyncStorageHandler?.(AsyncStorage)
+const reactotron = Reactotron?.setAsyncStorageHandler?.(AsyncStorage)
   .configure({
     name: 'Reactotron In Expo demo',
     host: scriptHostname,
@@ -30,6 +31,9 @@ Reactotron?.setAsyncStorageHandler?.(AsyncStorage)
     errors: { veto: (stackFrame) => false },
     overlay: false,
   })
+  .use(reactotronRedux())
   .connect()
 
 console.log = Reactotron.log || console.log
+
+export default reactotron

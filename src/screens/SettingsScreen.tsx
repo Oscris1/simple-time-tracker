@@ -1,13 +1,12 @@
 import { ScrollView, Text, Button, Center, ColorMode } from 'native-base'
 
 import { Version, Spacer } from '~components'
-import { useAuth, useCallback, useColorMode, useTranslation } from '~hooks'
+import { useCallback, useColorMode, useTranslation } from '~hooks'
 import { noop } from '~utils'
 
 export const SettingsScreen = (): JSX.Element => {
   const { t } = useTranslation()
   const { colorMode, setColorMode } = useColorMode()
-  const { signOut } = useAuth()
 
   const handleColorSchemeSettingChange = useCallback(
     (colorScheme: ColorMode) => () => setColorMode(colorScheme),
@@ -36,7 +35,7 @@ export const SettingsScreen = (): JSX.Element => {
           )
         })}
 
-        <Button colorScheme="danger" mt={8} size="lg" width="64" onPress={signOut}>
+        <Button colorScheme="danger" mt={8} size="lg" width="64">
           {t('settings_screen.sign_out')}
         </Button>
         <Spacer y="10" />

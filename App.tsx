@@ -8,16 +8,8 @@ import '~i18n'
 
 import { Navigation } from '~navigation'
 import { Providers } from '~providers'
-import { startMockedServer } from '~services'
 
-// FIXME: there is some issue with miragejs that causes console.log to not work
-const DISABLE_CONSOLE_ENABLE_MOCKED_SERVER = false
-
-if (DISABLE_CONSOLE_ENABLE_MOCKED_SERVER) {
-  startMockedServer()
-}
-
-const isUsingReactotron = false
+const isUsingReactotron = true
 if (__DEV__ && isUsingReactotron && !process.env.JEST_WORKER_ID) {
   import('./ReactotronConfig').then(() => console.log('Reactotron Configured'))
 }
