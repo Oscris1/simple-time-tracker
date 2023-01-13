@@ -11,11 +11,11 @@ import { convertMsToTime } from '~utils'
 
 export const TrackerScreen = (): JSX.Element => {
   const { currentTask, tasksList } = useSelector((state: RootState) => state.tasks)
+  const dispatch = useAppDispatch()
+  const toast = useToast()
 
   const [taskName, setTaskName] = useState<string>('')
   const [timer, setTimer] = useState<number>()
-  const dispatch = useAppDispatch()
-  const toast = useToast()
 
   const calcPrevTime = useMemo(() => {
     if (!currentTask) return 0
@@ -34,7 +34,7 @@ export const TrackerScreen = (): JSX.Element => {
   }, [calcPrevTime, currentTask])
 
   useEffect(() => {
-    handleSetTimer()
+    handleSetTimer() // this handles timer before first interval
     const interval = setInterval(() => handleSetTimer(), 1000)
 
     return () => clearInterval(interval)

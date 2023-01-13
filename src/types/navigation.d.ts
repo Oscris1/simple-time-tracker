@@ -6,11 +6,7 @@ declare global {
   // PARAMS
 
   type RootStackParamList = {
-    Settings: undefined
     Tracker: undefined
-
-    // modals
-    ApplicationInfo: undefined
   }
 
   namespace ReactNavigation {
