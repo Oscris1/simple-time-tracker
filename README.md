@@ -1,3 +1,20 @@
+# Simple Time Tracker 
+![image](https://user-images.githubusercontent.com/48210346/212356514-3a8c85e2-898e-45ce-94c9-2cdb8c6e6c4e.png)
+![image](https://user-images.githubusercontent.com/48210346/212356669-142da46c-ccf2-492d-8656-02a1ea7f8112.png)
+![image](https://user-images.githubusercontent.com/48210346/212356750-6080af30-c434-453b-91ec-21ab438c7f1e.png)
+
+
+## install dependencies
+
+```sh
+yarn
+```
+## run project
+
+```sh
+yarn start
+```
+
 ## Icons
 
 This template uses [Remix icon set](https://remixicon.com/)
